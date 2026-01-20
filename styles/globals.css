@@ -7,7 +7,6 @@
 }
 
 body {
-  min-inline-size: 375px;
   max-inline-size: 1440px;
   margin: 0 auto;
 }
@@ -20,6 +19,7 @@ h5,
 h6,
 p {
   margin: 0;
+  margin-block: auto;
 }
 
 ul {

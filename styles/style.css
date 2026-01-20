@@ -2,4 +2,328 @@
 
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  --main-color: #000;
+  background-image: var(--bg-img);
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+  place-items: center;
+  background-attachment: fixed;
+  background-color: #03033e;
+  padding: 10px;
+}
+
+.main {
+  display: grid;
+  gap: 50px;
+}
+
+.header::before {
+  content: "";
+  display: block;
+  border-top: 2px solid var(--accent-color);
+  border-right: 2px solid var(--accent-color);
+  block-size: 25px;
+  inline-size: 25px;
+  position: absolute;
+  top: 0px;
+  right: 0px;
+}
+
+.header::after {
+  content: "";
+  display: block;
+  border-bottom: 2px solid var(--accent-color);
+  border-left: 2px solid var(--accent-color);
+  block-size: 25px;
+  inline-size: 25px;
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+}
+
+.header {
+  height: 100vh; /* 100% высоты вьюпорта (окна браузера) */
+  /* Или body и html */
+  min-height: 668px;
+  display: grid;
+  justify-self: right;
+  align-self: flex-end;
+  position: relative;
+}
+
+.rec {
+  color: var(--accent-color);
+  display: flex;
+  font-family: var(--accent-font);
+  font-size: 18px;
+}
+
+.rec::after {
+  content: "";
+  display: block;
+  font-size: 52px;
+  background-color: var(--accent-color);
+  border-radius: 50%;
+  width: 9px;
+  height: 9px;
+  box-shadow: 0 0 4px 2px var(--accent-color);
+  margin-top: 7px;
+  margin-left: 10px;
+}
+
+.title {
+  color: var(--title-color);
+  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  text-shadow: 4px 4px 0 var(--accent-color);
+  margin: 0;
+  line-height: 83%;
+}
+.title-decor {
+  background-color: var(--accent-color);
+  color: #000028;
+  font-family: var(--accent-font);
+  font-weight: 700;
+  font-size: var(--title-size);
+  line-height: 23.4px;
+}
+
+.images {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+}
+
+.section_paragraph {
+  font-family: IBM Plex Mono;
+  color: var(--main-text-color);
+  line-height: 23.4px;
+  font-size: var(--title-size);
+  margin-bottom: 20px;
+}
+
+.section_title {
+  font-family: var(--accent-font);
+  color: var(--accent-color);
+  font-size: var(--title-size);
+  margin-bottom: 20px;
+}
+
+.description-wrap {
+  display: grid;
+  grid-template-areas: "a a";
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+  margin-bottom: 55px;
+}
+
+.description {
+  grid-area: a;
+}
+
+.section_subtitle {
+  margin-bottom: 10px;
+}
+
+.section_subsubtitle {
+  font-weight: normal;
+  margin-bottom: 10px;
+}
+
+.img {
+  grid-column: 1 /-1;
+  width: 100%;
+}
+
+.header__theme-menu-button {
+  color: var(--accent-color);
+  font-size: var(--title-size);
+  line-height: 18px;
+  background-color: transparent;
+  font-family: var(--accent-font);
+  text-transform: lowercase;
+  border: 1px solid transparent;
+  padding: 1.5px 13px;
+  outline: none;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:focus {
+  border: 1px solid transparent;
+  border-bottom: 1px solid var(--accent-color);
+}
+
+.header__theme-menu-button:hover {
+  border: 1px solid var(--accent-color-semi-transparent);
+}
+
+.header__theme-menu-button_active {
+  border: 1px solid var(--accent-color);
+  pointer-events: none;
+}
+
+.header__theme-menu-list {
+  display: grid;
+  gap: 10px;
+  font-size: var(--title-size);
+  justify-self: flex-end;
+  align-self: self-end;
+}
+
+.lamp {
+  display: grid;
+  justify-items: end;
+  justify-content: stretch;
+  align-content: start;
+  margin-top: 4px;
+  margin-right: 10px;
+}
+
+.footer {
+  height: 100vh;
+  width: 100%;
+  font-weight: bold;
+  display: grid;
+  align-items: center;
+  position: relative;
+  text-align: center;
+}
+
+.footer::before {
+  content: "";
+  display: block;
+  border-top: 2px solid var(--accent-color);
+  border-right: 2px solid var(--accent-color);
+  block-size: 25px;
+  inline-size: 25px;
+  top: 0;
+  right: 0;
+  position: absolute;
+}
+
+.footer::after {
+  content: "";
+  display: block;
+  border-bottom: 2px solid var(--accent-color);
+  border-left: 2px solid var(--accent-color);
+  block-size: 25px;
+  inline-size: 25px;
+  position: absolute;
+  bottom: 0;
+}
+
+/* Планшет */
+@media screen and (width >= 768px) {
+  .page {
+    padding: 20px;
+  }
+
+  .title {
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
+  }
+
+  .description-wrap {
+    grid-template-areas: ". a";
+  }
+
+  .images {
+    gap: 20px;
+    grid-template-rows: 1fr 1fr 1.38fr;
+    grid-template-areas:
+      "a a b"
+      "c d b"
+      "c e e";
+  }
+
+  .img-rise {
+    grid-area: a;
+  }
+
+  .img-icecream {
+    grid-area: b;
+  }
+
+  .img-audio {
+    grid-area: c;
+  }
+
+  .img-books {
+    grid-area: d;
+  }
+
+  .img-street {
+    grid-area: e;
+  }
+
+  .img {
+    block-size: 100%;
+    object-fit: cover;
+    inline-size: 100%;
+    object-position: center;
+  }
+
+  .section_why {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+
+  .section_why > .section_title,
+  .section_concentration > .section_title {
+    margin-block-start: 0;
+  }
+
+  .section_concentration {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+}
+
+.anchor {
+ text-shadow: 2px 2px 2px var(--accent-color);
+ text-decoration: none;
+}
+
+
+
+/* Десктоп */
+@media screen and (width >= 1024px) {
+  .header__theme-menu {
+    position: absolute;
+    left: calc(50% - 115px);
+  }
+
+  .header__theme-menu-list {
+    display: flex;
+  }
+
+  .section_attention {
+    display: grid;
+    grid-template-rows: 2fr;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-areas:
+      "a . ."
+      "b c d";
+    gap: 20px;
+  }
+
+  .section_attention > .section_title {
+    grid-area: a;
+  }
+
+  .article_attention_multi {
+    grid-area: b;
+  }
+  .article_attention_meal {
+    grid-area: c;
+  }
+
+  .article_attention_gadgets {
+    grid-area: d;
+  }
+
+  .section_title {
+    margin-bottom: 0px;
+  }
 }
