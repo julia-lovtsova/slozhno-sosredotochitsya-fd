@@ -95,7 +95,7 @@
 }
 
 .section_paragraph {
-  font-family: IBM Plex Mono;
+  font-family: var(--accent-font);
   color: var(--main-text-color);
   line-height: 23.4px;
   font-size: var(--title-size);
