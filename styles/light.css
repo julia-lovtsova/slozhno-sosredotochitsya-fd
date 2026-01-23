@@ -15,6 +15,11 @@
   --accent-color-semi-transparent: #32312d66;
   --title-color: #ffc2e6ff;
 
+  .page {
+    background-image: var(--bg-img);
+    background-color: #fff1f7;
+  }
+
   .header__theme-menu-button {
     color: var(--main-text-color);
   }
@@ -49,7 +54,8 @@
     --accent-color-semi-transparent: #32312d66;
     --title-color: #ffc2e6ff;
   }
-header__theme-menu-button {
+
+  .header__theme-menu-button {
     color: var(--main-text-color);
   }
 
@@ -73,5 +79,4 @@ header__theme-menu-button {
   .section_title {
     color: var(--main-text-color);
   }
-
 }

@@ -24,4 +24,25 @@
     --accent-color-semi-transparent: #ff007066;
     --title-color: #db00ff;
   }
+
+  .header__theme-menu-button {
+    color: var(--main-text-color);
+  }
+
+  .header__theme-menu-button:focus {
+    border-bottom-color: var(--main-text-color);
+  }
+
+  .header__theme-menu-button_active {
+    border-color: var(--main-text-color);
+  }
+
+  .header::before,
+  .header::after {
+    border-color: var(--main-text-color);
+  }
+
+  .section_title {
+    color: var(--main-text-color);
+  }
 }
