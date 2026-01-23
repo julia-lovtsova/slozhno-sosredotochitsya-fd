@@ -38,7 +38,7 @@
   block-size: 25px;
   inline-size: 25px;
   position: absolute;
-  bottom: 0px;
+  bottom: 10px;
   left: 0px;
 }
 
@@ -168,6 +168,8 @@
   font-size: var(--title-size);
   justify-self: flex-end;
   align-self: self-end;
+  position: relative;
+  bottom: 10px;
 }
 
 .lamp {
