@@ -298,7 +298,7 @@
 
   .section_attention {
     display: grid;
-    grid-template-columns: 1fr 2fr;
+    grid-template-columns: repeat(3, 1fr);
     grid-template-rows: 4fr;
     grid-template-areas:
       "a . ."
