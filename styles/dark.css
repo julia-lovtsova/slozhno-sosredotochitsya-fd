@@ -14,6 +14,8 @@
   --accent-color: #ff0070;
   --accent-color-semi-transparent: #ff007066;
   --title-color: #db00ff;
+  --lamp-visibility: visible;
+  --border-color: #ff0070;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -23,10 +25,12 @@
     --accent-color: #ff0070;
     --accent-color-semi-transparent: #ff007066;
     --title-color: #db00ff;
+    --lamp-visibility: visible;
+    --border-color: #ff0070;
   }
 
-  .header__theme-menu-button {
-    color: var(--main-text-color);
+  /* .header__theme-menu-button {
+    color: var(--accent-color);
   }
 
   .header__theme-menu-button:focus {
@@ -34,15 +38,15 @@
   }
 
   .header__theme-menu-button_active {
-    border-color: var(--main-text-color);
+    border-color: var(--accent-color);
   }
 
   .header::before,
   .header::after {
-    border-color: var(--main-text-color);
+    border-color: var(--accent-color);
   }
 
   .section_title {
     color: var(--main-text-color);
-  }
+  } */
 }
