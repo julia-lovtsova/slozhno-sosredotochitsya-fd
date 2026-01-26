@@ -10,13 +10,3 @@
   --lamp-visibility: hidden;
 }
 
-
-/ @media (prefers-color-scheme: light) {
-  :root {
-    --main-text-color: #353430;
-    --bg-img: url(../images/cover-image-light.png);
-    --accent-color: #ff8dcb;
-    --accent-color-semi-transparent: #32312d66;
-    --title-color: #ffc2e6ff;
-  
-  } */
