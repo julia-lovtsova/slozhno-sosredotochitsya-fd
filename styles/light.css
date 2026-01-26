@@ -1,82 +1,22 @@
-/*
-  Специально для светлой темы при наличии класса.
-  Здесь окажутся стили, которые нужно переопределить принудительно,
-  переключая тему
-*/
+
 
 :root.theme-light {
-  /* сохраните этот селектор в приведённом виде.
-    Так стили написанные ниже будут иметь больший вес,
-    чем стили в медиазапросе предпочтений пользователя
-  */
   --main-text-color: #353430;
   --bg-img: url(../images/cover-image-light.png);
   --accent-color: #ff8dcb;
   --accent-color-semi-transparent: #32312d66;
   --title-color: #ffc2e6ff;
   --border-color: #353430;
+  --lamp-visibility: hidden;
 }
 
-  /* .page {
-    background-image: var(--bg-img);
-    background-color: #fff1f7;
-  }
 
-  .header__theme-menu-button {
-    color: var(--main-text-color);
-  }
-
-  .header__theme-menu-button:focus {
-    border-bottom-color: var(--main-text-color);
-  }
-
-  .header__theme-menu-button_active {
-    border-color: var(--main-text-color);
-  }
-
-  .header::before,
-  .header::after {
-    border-color: var(--main-text-color);
-  }
-
-  .lamp {
-    visibility: var(--lamp-vsibility);
-  }
-
-  .section_title {
-    color: var(--main-text-color);
-  }
-} */
-
-@media (prefers-color-scheme: light) {
+/ @media (prefers-color-scheme: light) {
   :root {
     --main-text-color: #353430;
     --bg-img: url(../images/cover-image-light.png);
     --accent-color: #ff8dcb;
     --accent-color-semi-transparent: #32312d66;
     --title-color: #ffc2e6ff;
-    --border-color: #353430;
-  }
-
-  /* .header__theme-menu-button {
-    color: var(--main-text-color);
-  }
-
-  .header__theme-menu-button:focus {
-    border-bottom-color: var(--main-text-color);
-  }
-
-  .header__theme-menu-button_active {
-    border-color: var(--main-text-color);
-  }
-
-  .header::before,
-  .header::after {
-    border-color: var(--main-text-color);
-  }
-
-
-  .section_title {
-    color: var(--main-text-color);
+  
   } */
-}

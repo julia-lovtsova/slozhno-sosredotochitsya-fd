@@ -10,6 +10,7 @@
   place-items: center;
   background-attachment: fixed;
   background-color: #03033e;
+  background-size: cover;
   padding: 10px;
 }
 
