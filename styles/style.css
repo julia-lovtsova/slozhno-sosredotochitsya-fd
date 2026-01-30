@@ -1,22 +1,29 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
   /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
-  --main-color: #000;
   background-image: var(--bg-img);
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 30px;
   place-items: center;
   background-attachment: fixed;
   background-color: #03033e;
   background-size: cover;
-  padding: 10px;
 }
 
 .main {
   display: grid;
-  gap: 50px;
+  gap: 30px;
+  padding: 10px;
+}
+
+.header {
+  height: 100vh; /* 100% высоты вьюпорта (окна браузера) */
+  /* Или body и html */
+  display: grid;
+  grid-template-rows: 1fr 192px 1fr;
+  grid-template-columns: 1fr;
+  position: relative;
+  font-family: var(--accent-font);
 }
 
 .header::before {
@@ -27,40 +34,35 @@
   block-size: 25px;
   inline-size: 25px;
   position: absolute;
-  top: 0px;
-  right: 0px;
+  top: 10px;
+  right: 10px;
 }
 
 .header::after {
   content: "";
   display: block;
-  border-bottom: 2px solid var(--border-color);
-  border-left: 2px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
   block-size: 25px;
   inline-size: 25px;
   position: absolute;
   bottom: 10px;
-  left: 0px;
+  left: 10px;
 }
 
-.header {
-  height: 100vh; /* 100% высоты вьюпорта (окна браузера) */
-  /* Или body и html */
-  min-height: 668px;
-  display: grid;
-  justify-self: right;
-  align-self: flex-end;
-  position: relative;
-}
-
-.rec {
+.lamp {
+  visibility: var(--lamp-visibility);
   color: var(--accent-color);
   display: flex;
-  font-family: var(--accent-font);
+  justify-content: flex-end;
+  font-family: var(--accent-font), Arial, sans-serif;
   font-size: 18px;
+  position: absolute;
+  right: 10px;
+  top: 10px;
 }
 
-.rec::after {
+.lamp::after {
   content: "";
   display: block;
   font-size: 52px;
@@ -69,34 +71,35 @@
   width: 9px;
   height: 9px;
   box-shadow: 0 0 4px 2px var(--accent-color);
-  margin-top: 7px;
-  margin-left: 10px;
+  margin: 8px 9px 9px 10px;
 }
 
 .title {
   color: var(--title-color);
+  font-family: var(--accent-font), Arial, sans-serif;
   font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
   text-shadow: 4px 4px 0 var(--accent-color);
   line-height: 83%;
   font-weight: bold;
 }
+
 .title-decor {
   background-color: var(--accent-color);
   color: #000028;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Arial, sans-serif;
   font-weight: 700;
   font-size: var(--title-size);
   line-height: 23.4px;
+  padding-left: 1px;
 }
 
 .images {
   display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
   gap: 10px;
 }
 
 .section_paragraph {
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Arial, sans-serif;
   color: var(--main-text-color);
   line-height: 23.4px;
   font-size: var(--title-size);
@@ -104,18 +107,15 @@
 }
 
 .section_title {
-  font-family: var(--accent-font);
-  color: var(--accent-color);
+  font-family: var(--accent-font), Arial, sans-serif;
+  color: var(--border-color);
   font-size: var(--title-size);
   margin-bottom: 20px;
 }
 
 .description-wrap {
   display: grid;
-  grid-template-areas: "a a";
-  grid-template-columns: 1fr 1fr;
-  grid-template-rows: 1fr;
-  margin-bottom: 70px;
+  align-content: center;
 }
 
 .description {
@@ -131,9 +131,19 @@
   margin-bottom: 10px;
 }
 
+.section_subsubtitle:first-of-type {
+  margin-top: 20px;
+}
+
 .img {
-  grid-column: 1 /-1;
   width: 100%;
+  object-fit: contain;
+  object-position: center;
+}
+
+.header__theme-menu {
+  display: grid;
+  align-content: center;
 }
 
 .header__theme-menu-button {
@@ -141,7 +151,7 @@
   font-size: var(--title-size);
   line-height: 18px;
   background-color: transparent;
-  font-family: var(--accent-font);
+  font-family: var(--accent-font), Arial, sans-serif;
   text-transform: lowercase;
   border: 1px solid transparent;
   padding: 1.5px 13px;
@@ -168,22 +178,10 @@
   gap: 10px;
   font-size: var(--title-size);
   justify-self: flex-end;
-  align-self: self-end;
-  position: relative;
-  bottom: 10px;
-}
-
-.lamp {
-  display: grid;
-  justify-items: end;
-  justify-content: stretch;
-  align-content: start;
-  margin-top: 4px;
-  margin-right: 10px;
-  visibility: var(--lamp-visibility);
 }
 
 .footer {
+  font-family: var(--accent-font);
   height: 100vh;
   width: 100%;
   font-weight: bold;
@@ -196,25 +194,25 @@
 .footer::before {
   content: "";
   display: block;
-  border-top: 2px solid var(--border-color);
-  border-right: 2px solid var(--border-color);
+  border-top: 1px solid var(--border-color);
+  border-right: 1px solid var(--border-color);
   block-size: 25px;
   inline-size: 25px;
-  top: 0;
-  right: 0;
+  top: 10px;
+  right: 10px;
   position: absolute;
-  
 }
 
 .footer::after {
   content: "";
   display: block;
-  border-bottom: 2px solid var(--border-color);
-  border-left: 2px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  border-left: 1px solid var(--border-color);
   block-size: 25px;
   inline-size: 25px;
   position: absolute;
-  bottom: 0;
+  bottom: 10px;
+  left: 10px;
 }
 
 .anchor {
@@ -222,35 +220,76 @@
   text-decoration: none;
 }
 
+.anchor:hover {
+  text-decoration: underline;
+}
+
+.anchor:focus {
+  border: 1px solid var(--main-text-color);
+}
+
 /* Планшет */
 @media screen and (width >= 768px) {
   .page {
-    padding: 20px;
+    gap: 50px;
+  }
+
+  .header {
+    grid-template-rows: 1fr 99px 1fr;
+    grid-template-columns: 2fr;
+  }
+
+  .header__theme-menu {
+    padding-inline: 20px;
+    position: relative;
+    top: 10px;
+  }
+
+  .header::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .header::after {
+    top: 20px;
+    right: 20px;
   }
 
   .main {
     gap: 80px;
+    padding: 10px 20px;
   }
 
   .title {
     font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 
-  .section_subtitle {
-    margin-bottom: 20px;
-  }
-
   .section_paragraph:last-of-type {
     margin-bottom: 0;
   }
 
+  .lamp {
+    right: 20px;
+    top: 20px;
+  }
+
   .description-wrap {
     grid-template-areas: ". a";
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr;
+    padding-inline: 20px;
+    position: relative;
+    bottom: 10px;
+  }
+
+  .section_imgs {
+    display: grid;
+    gap: 10px;
   }
 
   .images {
     gap: 20px;
-    grid-template-rows: 1fr 1fr 1.38fr;
+    grid-template-rows: 192px 230px 318px;
     grid-template-areas:
       "a a b"
       "c d b"
@@ -331,13 +370,50 @@
   .section_title {
     margin-bottom: 0px;
   }
+
+   .footer::before {
+    top: 20px;
+    right: 20px;
+  }
+
+  .footer::after {
+    top: 20px;
+    right: 20px;
+  }
 }
 
 /* Десктоп */
 @media screen and (width >= 1024px) {
+  .header::after {
+    bottom: 40px;
+  }
+
+  .description-wrap {
+    bottom: 5px;
+  }
+
+  .section_subsubtitle:first-of-type {
+    margin-top: 20px;
+  }
+
+  .section_article {
+    position: relative;
+    right: 7px;
+  }
+
+  .title {
+    position: relative;
+    bottom: 15px;
+  }
+
   .header__theme-menu {
-    position: absolute;
-    left: calc(50% - 115px);
+    align-content: start;
+    justify-content: center;
+    top: 20px;
+  }
+
+  .images {
+    grid-template-rows: 260px 315px 433px;
   }
 
   .header__theme-menu-list {
@@ -350,4 +426,9 @@
       "a . ."
       "b c d";
   }
+
+  .footer {
+    top: 0;
+  }
+
 }
