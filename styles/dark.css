@@ -6,4 +6,20 @@
   --title-color: #db00ff;
   --border-color: #ff0070;
   --lamp-visibility: visible;
+  --title-decor-color: #000028;
+  --bg-color: #000028;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --main-text-color: #f1b2ce;
+    --bg-img: url(../images/cover-image-dark.png);
+    --accent-color: #ff0070;
+    --accent-color-semi-transparent: #ff007066;
+    --title-color: #db00ff;
+    --border-color: #ff0070;
+    --lamp-visibility: visible;
+    --title-decor-color: #000028;
+    --bg-color: #000028;
+  }
 }
